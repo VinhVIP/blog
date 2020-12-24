@@ -1,2 +1,4 @@
 # blog
-https://drive.google.com/file/d/1ThVSak5mPAWk8QVnH9WaJnaivs1O9ke4/view?usp=sharing
+
+https://drive.google.com/file/d/1OryMJIZX1bKhcHmA0adb8U8G_WkTc_7P/view?usp=sharing
+https://drive.google.com/file/d/1HJJAWFjkApfuWJtD4PcQ6583ex6uaFsz/view?usp=sharing
