@@ -19,7 +19,7 @@ TextView tv = findViewById(R.id.text_view);
 
 Một số thuộc tính của TextView
 
-##1. ID
+## 1, ID
 
 ID dùng để phân biệt giữa các View với nhau
 ```xml
