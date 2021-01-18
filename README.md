@@ -16,7 +16,7 @@ TextView là một View cho phép hiển thị text trên màn hình. TextView c
 *Lấy TextView từ layout bằng Java*
 
 ```java
-TextView tv = findViewById(R.id.text_view);
+TextView textView = findViewById(R.id.text_view);
 ```
 
 **Một số thuộc tính của TextView**
@@ -24,9 +24,18 @@ TextView tv = findViewById(R.id.text_view);
 ## 1, ID
 
 ID dùng để phân biệt giữa các View với nhau
+
 ```xml
 android:id="@+id/text_view"
 ```
+
+Sau khi tạo thuộc tính id, tên của id sẽ **tự động** được tạo tham chiếu trong class id thuộc class R. Do đó khi muốn lấy đối tượng TextView từ xml layout bằng java, ta sử dụng câu lệnh:
+
+```java
+TextView textView = findViewById(R.id.text_view);
+```
+
+Phương thức `findViewById` trả về 1 đối tượng View dựa vào resource id của đối tượng ta muốn lấy, View sẽ được tự động ép kiểu ngầm sang TextView.
 
 ## 2, Kích thước
 
@@ -37,13 +46,14 @@ Giá trị gồm 3 loại:
  - `match_parent`: kích thước sẽ được mở rộng bằng với kích thước tối đa mà ViewGroup cha có thể chứa.
  - ```wrap_content```: kích thước vừa đủ để vừa với nội dung bên trong của TextView
  - giá trị cụ thể: vd `android:layout_width="100dp"`
- hoặc giá trị lấy từ dimens.xml
+ hoặc giá trị lấy từ `dimens.xml`
 
 ```xml
 <resources>
     <dimen name="text_view_width">100dp</dimen>
 </resources>
 ```
+
 ```xml
 android:layout_width="@dimen/text_view_width"
 ```
@@ -68,6 +78,12 @@ android:gravity"bottom|right"
 
 ![Gravity](https://github.com/VinhVIP/blog/blob/gh-pages/img/tv_gravity.png?raw=true)
 
+**Thiết lập bằng Java**
+
+```java
+textView.setGravity(Gravity.BOTTOM | Gravity.RIGHT);
+```
+
 ## 4, Gán text cho TextView
 
 ```xml
@@ -84,6 +100,13 @@ hoặc lấy text từ resource được định nghĩa trong `strings.xml`
 
 ```xml
 android:text="@string/hello"
+```
+
+**Thiết lập bằng Java**
+```java
+textView.setText("Xin chào!");
+// hoặc lấy String từ resource
+textView.setText(R.string.hello);
 ```
 
 ## 5, Thiết lập màu chữ
@@ -104,6 +127,17 @@ hoặc lấy mã màu từ resource được định nghĩa trong `colors.xml`
 android:textColor="@color/red"
 ```
 
+**Thiết lập bằng Java**
+```java
+// Sử dụng các màu có sẵn được định nghĩa trong lớp Color
+textView.setTextColor(Color.RED);
+
+// Hoặc sử dụng mã màu hexa cụ thể
+textView.setTextColor(Color.parseColor("#ff0000"));
+
+// Hoặc lấy từ resource
+textView.setTextColor(getColor(R.color.red));
+```
 ## 6, Thiết lập kiểu chữ
 
 `android:textStyle` bao gồm 3 giá trị: `bold`, `italic`, `normal`
@@ -112,6 +146,11 @@ Các giá trị cũng có thể kết hợp với nhau, vd kiểu chữ đậm v
 
 ```xml
 android:textStyle="bold|italic"
+```
+
+**Thiết lập bằng Java**
+```java
+textView.setTypeface(null, Typeface.BOLD_ITALIC);
 ```
 
 ## 7, Thiết lập cỡ chữ
@@ -124,6 +163,14 @@ VD:
 android:textSize="18sp"
 ```
 
+**Thiết lập bằng Java**
+```java
+// Cỡ chữ 18sp = 18dp
+textView.setTextSize(18);
+
+// Cỡ chữ 20 pixels
+mytextview.setTextSize(TypedValue.COMPLEX_UNIT_PX , 20); //20px
+```
 
 ## 8, Thiết lập font chữ
 
@@ -151,7 +198,7 @@ Nội dung của TextView có thể là đường dẫn 1 trang web, địa ch�
 
 TextView cho phép thiết lập nền là drawable, sử dụng các thuộc tính `android:drawableLeft`, `android:drawableRight`, `android:drawableTop`, `android:drawableBottom` để thiết lập drawable vào bên trái, phải, trên, dưới nội dung text của TextView
 
-Drawable có thể tạo từ Vector Asset hoặc từ code xml sử dụng shape drawble.
+Drawable có thể tạo từ Vector Asset hoặc từ code xml sử dụng shape drawable.
 
 VD: Tạo 1 hình chữ nhật 100x15 có màu hồng - `drawable/line.xml`
 
@@ -176,6 +223,16 @@ android:drawablePadding="10dp"
 
 ![Drawable](https://github.com/VinhVIP/blog/blob/gh-pages/img/tv_drawable.png?raw=true)
 
+**Thiết lập bằng Java**
+```java
+Drawable leftDrawable = getDrawable(R.drawable.ic_cloud);
+Drawable topDrawable = getDrawable(R.drawable.line);
+Drawable rightDrawable = getDrawable(R.drawable.ic_cloud);
+Drawable bottomDrawable = getDrawable(R.drawable.line);
+        
+textView.setCompoundDrawables(leftDrawable, topDrawable, rightDrawable, bottomDrawable);
+```
+
 ## 11, Màu nền
 
 `android:background` dùng để thiết lập màu nền cho TextView, background có thể là mã màu hoặc drawable
@@ -190,6 +247,18 @@ hoặc:
 
 ```xml
 android:background="@drawable/line"
+```
+
+**Thiết lập bằng Java**
+```java
+// sử dụng màu
+textView.setBackgroundColor(Color.RED);
+
+// sử dụng resources
+textView.setBackgroundResource(R.drawable.line);
+// hoặc
+textView.setBackground(getDrawable(R.drawable.line));
+
 ```
 
 ## 12, Margin
@@ -213,4 +282,10 @@ VD:
 
 ```xml
 android:padding="10dp"
+```
+
+**Thiết lập bằng Java**
+```java
+// set padding 4 hướng theo pixels
+textView.setPadding(int left, int top, int right, int bottom);
 ```
