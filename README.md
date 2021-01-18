@@ -211,6 +211,10 @@ VD: Tạo 1 hình chữ nhật 100x15 có màu hồng - `drawable/line.xml`
 </shape>
 ``` 
 
+Tạo 1 Vector Asset bằng cách click chuột phải vào mục `drawable -> New -> Vector Asset`
+
+![](https://github.com/VinhVIP/blog/blob/gh-pages/img/ic_cloud.png?raw=true)
+
 ```xml
 android:drawableLeft="@drawable/ic_cloud"
 android:drawableRight="@drawable/ic_cloud"
