@@ -112,7 +112,7 @@ android:drawablePadding="10dp"
 
 drawablePadding dùng để thiết lập khoảng cách giữa drawable là nội dung text.
 
-![Drawable](https://lh3.googleusercontent.com/C3bo_W7PawzGcFofZgl5tikYWvIwk2RYTR2Z7NpKoU8-Su4soEARaEIDERM9X-RoUL_zhJxm9wSMP3RPOiYN=w1960-h2570-rw)
+![Drawable](https://lh3.google.com/u/4/d/1iSpqXCTJUm-35UbkoB_JZG9_N71evMZE=w2000-h2622-iv2)
 
 11. Màu nền
 `android:background` dùng để thiết lập màu nền cho TextView, background có thể là mã màu hoặc drawable
