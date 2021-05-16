@@ -1,6 +1,6 @@
 N
 
-https://drive.google.com/drive/folders/1_4kSAa8rp4Z4aExj9ArSXEohlS2OB8zH?usp=sharing
+https://drive.google.com/file/d/1Bg3sunvV-4C7HmAkWO1N70KUikWhgyKH/view?usp=sharing
 
 # TextView trong Android
 TextView là một View cho phép hiển thị text trên màn hình. TextView có thể tùy chỉnh cỡ chữ, font chữ, màu sắc,...
